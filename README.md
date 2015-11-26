@@ -7,12 +7,13 @@
 
 ### 2 Problématique
 
-L'objectif de ce TP est de nous sensibiliser à la programmation en ASM (MASM32 plus exactement) et à la lecture de code assembleur.  
+L'objectif du TP est de nous sensibiliser à la programmation en ASM (MASM32 plus exactement) et à la lecture de code assembleur.  
  
 #### 2.1 Analyse théorique
 Le listing d'un dossier et de ces sous dossiers est simplifié sous Windows grâce à l'API du même nom. 
 Cette API nous décharge d'une grande partie de gestion des erreurs et différents accès système. 
 
+  
 Pseudo code de "MyDir" :
 ```bat
     PathToScan == UserPathInput
@@ -43,8 +44,8 @@ Les difficultés liés à ce code sont :
 
 #### 2.2 Implémentation C
 Suite à des soucis d'ordre technique (problème sur les machines universitaires) je n'ai eu que peut de temps pour re-réaliser mon code. 
-Cette version ne gère pas l'input utilisateur. 
-Le chemin absolu du répertoire à lister est en dur dans le fichier. 
+Cette version ne gère donc pas l'input utilisateur. 
+Le chemin absolu du répertoire à lister est en dur dans le code. 
 
 Analyse des parties essentielles :  
 * La structure [WIN32_FIND_DATA](https://msdn.microsoft.com/en-us/library/windows/desktop/aa365740%28v=vs.85%29.aspx)
@@ -146,16 +147,20 @@ affichage multi lige
 ### 3 Conclusion
 
 #### 3.1 Visuellement
-C version :
+C version :   
+
+
 ![](http://i.imgur.com/W9cJYrF.png)
 
-MASM version : 
+MASM version :   
+
+
 ![](http://i.imgur.com/m2mdeTv.png)
 
 #### 3.2 Ressentie
 
-Dans un premier temps, le passage par le C ma semblé n'être qu'une perte de temps, alors je me suis empressé de passer à l'assembleur.
-Avec le recul et les heures passé à débuguer mon programme, je pense que je passerais plus de temps sur le C (création du GUI et gestion des erreurs), afin de réaliser l'assembleur plus rapidement.
+Dans un premier temps, le passage par le C semblait n'être qu'une perte de temps, alors je me suis empressé de passer à l'assembleur.
+Avec le recul et les heures passé à débuguer mon programme, je pense que si c'était à refaire,je passerais plus de temps sur le C (création du GUI et gestion des erreurs), afin de réaliser l'assembleur plus rapidement.
 
 Je regrette un peu l'utilisation de MASM32 qui finalement n'est pas si loin des langages haut niveau (présence de while, if, etc.). Nous ne faisons pas du vrais assembleur système et en utilisant ollydbg, on ce rend bien compte que notre code est recompilé par la machine.
 
